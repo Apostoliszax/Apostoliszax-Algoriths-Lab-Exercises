@@ -24,35 +24,43 @@ int main(int argc, char const *argv[])
     
     int random;
     
+    int helpArray[size];
+    
+    for(int i = 0; i < 9 ; i++)
+    {
+       helpArray[i] = 0;
+    }
     
     
     
     
-    while (isOne(Numbers))
+    
+    
+    while (helpArray[9] == 0)
     {
         random = rand() % 9 + 1;
         printf("The random number is: %d \n",random);
 
-        int index;
-
-        for(i = 1; i < 10 ; i++)
+        for(int i = 0; i < 9 ; i++)
         {
-            if (Numbers[i] == random)
-            {
-                index = i;
-                Numbers[i] = -1;
-                break;
-            }        
+            Numbers[i] = random;
+            helpArray[i] = 1;
         }
-    
-        printf("New Array:\n");
 
-        printArray(Numbers);
-    }                    
+        
+        
+
+    }
+    
 
     
     
-    return 0;
+    printf("New Array:\n");
+
+    printArray(Numbers);
+                      
+
+return 0;
 }
 
 
@@ -68,20 +76,4 @@ void printArray(int Array[])
         	
 		 
   	}
-}
-
-int lastOne(int Array[])
-{
-    
-    for (int i = 0; i < 9; i++)
-    {
-        if (Array[i] == -1)
-        {
-            return 0;
-        }
-        else
-        {
-            return 1;
-        }              
-    }        
 }
