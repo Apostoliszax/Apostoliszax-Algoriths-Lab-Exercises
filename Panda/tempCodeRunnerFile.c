@@ -1,1 +1,0 @@
-printf("%s %s %.2lf",StockName,at,StockPrice);
